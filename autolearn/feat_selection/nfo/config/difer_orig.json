@@ -1,0 +1,20 @@
+{
+  "max_order": 4,
+  "random_set_size": 1024,
+  "feat_opt_eta": 1e-4,
+  "feat_opt_eta_inc": 0.3,
+  "trade_off": null,
+  "trade_off_epoch": 5,
+  "batch_size": 128,
+  "num_epoch": 500,
+  "lr": 0.001,
+  "weight_decay": 1e-4,
+  "patience": 30,
+  "score_threshold": 1.5,
+  "score_loss": "mse",
+  "langevin_tau": 0.0,
+  "encoder_kind": "lstm",
+  "use_lsbo": false,
+  "use_vi": false,
+  "use_crossover": false
+}

@@ -1,0 +1,11 @@
+scikit-learn >= 0.21.2
+numpy >= 1.16.4
+pandas >= 0.25.1
+joblib >= 0.13.2
+imbalanced-learn >= 0.6.2
+torch >= 0.4.0
+gpytorch >= 1.11  # required only when nfo config use_lsbo=true
+torch-geometric >= 2.3  # required for the GAT-based NFO encoder (graph_utils.py)
+# torch-scatter / torch-sparse may be needed on some platforms — see PyG install docs
+openfe >= 0.0.12  # required only when running run_openfe.sh / run_compare.sh
+autofeat >= 2.0.0  # required only when running run_autofeat.sh / run_compare.sh

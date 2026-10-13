@@ -1,0 +1,78 @@
+{
+  "max_order": 5,
+  "random_set_size": 4096,
+  "feat_opt_eta": 0.0001,
+  "feat_opt_eta_inc": 0.3,
+  "trade_off": null,
+  "trade_off_epoch": 5,
+  "batch_size": 128,
+  "num_epoch": 500,
+  "lr": 0.001,
+  "weight_decay": 0.0001,
+  "patience": 30,
+  "score_threshold": 1.5,
+  "score_loss": "mse",
+  "langevin_tau": 0.0,
+  "vae": false,
+  "kl_beta": 0.001,
+  "use_cmi": false,
+  "use_cat_space": true,
+  "num_ops_only": true,
+  "use_lsbo": true,
+  "use_vi": false,
+  "use_crossover": true,
+  "downstream_greedy": {
+    "enable": true,
+    "shortlist": 128,
+    "k": 16,
+    "n_repeats": 8,
+    "val_frac": 0.3,
+    "patience": 4,
+    "n_estimators": 50
+  },
+  "crossover": {
+    "top_k_pairs": 8,
+    "alphas": [
+      0.25,
+      0.5,
+      0.75
+    ]
+  },
+  "lsbo": {
+    "K": 64,
+    "n_cands": 64,
+    "n_steps": 150,
+    "eta": 0.001,
+    "xi": 0.0,
+    "r_max": 4.0,
+    "top_k_seed": 8,
+    "sigma_noise_grid": [
+      0.05,
+      0.1,
+      0.2,
+      0.4
+    ],
+    "starts_per_combo": 10,
+    "gp_train_iters": 100,
+    "gp_lr": 0.1,
+    "gp_max_train": 512,
+    "s_star_quantile": 0.95,
+    "gp_train_top_frac": 0.5,
+    "rerank_round_trip": true,
+    "downstream_rerank": true,
+    "downstream_rerank_top_n": 16
+  },
+  "vi": {
+    "dim": 512,
+    "hidden": 256,
+    "n_layers": 6,
+    "tau": 0.1,
+    "beta": 0.01,
+    "n_iters": 300,
+    "batch_size": 32,
+    "n_per_anchor_train": 4,
+    "n_per_anchor_inf": 8,
+    "top_k_seed": 16,
+    "lr": 0.001
+  }
+}
