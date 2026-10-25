@@ -76,6 +76,7 @@ the runs into the paper artifact.
 | Paper artifact | Runs | Table/figure script |
 |---|---|---|
 | Common-budget quality (Tables 2, 7) | `bash run_quality_compare.sh <ds>` for the ten datasets (all methods, λ ∈ {0, 0.5, 1}) | `python scripts/topk_table.py` (padded top-16, fixed λ=0.5) |
+| Four-utility summary figure | reuses the quality-compare, subgroup, and outlier runs | `python scripts/plot_utility_summary.py` |
 | Held-out utility (Table 3, Fig. 2) | `bash run_fair_all.sh` (every method on each `<ds>__tr` only) | `python scripts/plugin_metric_eval.py --datasets pima german winequality-red airfoil`, then `python scripts/plot_heldout_utility.py` |
 | Subgroup purpose (Table 4 top) | GOFE runs with `score_mode=subgroup_op` and `NFO_EXTRA_OPTS="--num_ops_only --subgroup_rule=<r>"` for the top-5 rules on pima, german, winequality-red, spambase | `python scripts/purpose_eval.py --part subgroup_op5` |
 | Outlier purpose (Table 4 bottom, histogram figure) | GOFE runs with `score_mode=ifout` at α ∈ {5, 10, 15}% (α selected via `--subgroup_rule`, see `env.py:_ifout_masks`) | `python scripts/purpose_eval.py --part ifout`, then `python scripts/plot_ifout_hist.py` |

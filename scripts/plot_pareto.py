@@ -162,6 +162,8 @@ def main():
 
     # bump every font by 6 units relative to matplotlib defaults
     plt.rcParams.update({
+        'font.family': 'serif', 'font.serif': ['Times New Roman'],
+        'mathtext.fontset': 'stix',
         'font.size': 16,
         'axes.titlesize': 18,
         'axes.labelsize': 16,
@@ -170,10 +172,11 @@ def main():
         'legend.fontsize': 16,
     })
 
-    use_label = {'mi': 'Mutual information, MI', 'pearson': '|Pearson|',
+    use_label = {'mi': r'Mutual information $U_{\mathrm{MI}}$',
+                 'pearson': r'$U_{\rho}$',
                  'fisher': 'Fisher score'}[args.use]
-    comp_label = {'kext': 'Description complexity, $K$',
-                  'dbf': 'Distinct base features DBF'}[args.comp]
+    comp_label = {'kext': r'Description complexity $C_{\mathrm{desc}}$',
+                  'dbf': r'Distinct base features $C_{\mathrm{DBF}}$'}[args.comp]
 
     os.makedirs(args.outdir, exist_ok=True)
     stats = []
